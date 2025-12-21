@@ -1,6 +1,6 @@
 # F1KYC_KnowYourChamp
 
-## Formula 1 Core Concepts — Explained Simply 🏎️
+## Formula 1 Core Concepts Simplified 🏎️
 
 This document explains the foundational concepts behind Formula 1 standings and how championships are calculated.
 
@@ -70,9 +70,22 @@ Drivers earn points based on their **finishing position**.
 | 10th | 1 |
 
 ### Bonus:
-- there is different poitning system for sprint races 
+- there is different poitning system for sprint races
+- 
+### Sprint F1 Points System:
+| Position | Points |
+|--------|--------|
+| 1st | 8 |
+| 2nd | 7 |
+| 3rd | 6 |
+| 4th | 5 |
+| 5th | 4 |
+| 6th | 3 |
+| 7th | 2 |
+| 8th | 1 |
 
-Only the **top 10 finishers score points**.
+
+Only the **top 10 finishers score points and top 8 sprint finshers**.
 
 ---
 
