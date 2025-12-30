@@ -1,4 +1,4 @@
-# 🏁 KYC — KnowYourChamps
+# 🏁 F1KYC: KnowYourChamps
 
 <div align="center">
 
@@ -296,6 +296,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 **Built with 🏁 for F1 data nerds and championship dreamers**
 
-[⭐ Star this repo](https://github.com/biv720/kyc) | [🐛 Report Bug](https://github.com/biv720/kyc/issues) | [✨ Request Feature](https://github.com/biv720/kyc/issues)
+[⭐ Star this repo](https://github.com/biv720/F1KYC_KnowYourChamp) | [🐛 Report Bug](https://github.com/biv720/F1KYC_KnowYourChamp/issues) | [✨ Request Feature](https://github.com/biv720/F1KYC_KnowYourChamp/issues)
 
 </div>
