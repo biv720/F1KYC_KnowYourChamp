@@ -1,126 +1,301 @@
-# F1KYC_KnowYourChamp
-![RumorRadar Banner](https://media.discordapp.net/attachments/758945965939359745/1455437785862504540/image.png?ex=6954b990&is=69536810&hm=2452367da3fcf2f2da495ec708b6e07051a7a725385dbe4cccfd808ecd80509f&=&format=webp&quality=lossless&width=1451&height=367)
+# 🏁 KYC — KnowYourChamps
 
-## Formula 1 Core Concepts Simplified 🏎️
+<div align="center">
 
-This document explains the foundational concepts behind Formula 1 standings and how championships are calculated.
+![f1KYC Banner](https://media.discordapp.net/attachments/758945965939359745/1455437785862504540/image.png?ex=6954b990&is=69536810&hm=2452367da3fcf2f2da495ec708b6e07051a7a725385dbe4cccfd808ecd80509f&=&format=webp&quality=lossless&width=1451&height=367)
 
----
+**A Formula 1 championship prediction and simulation engine powered by real-world data.**
 
-## What is a Driver?
+*Maybe reality might be different xD*
 
-A **Driver** is an individual racer who competes in Formula 1 races for a specific team (constructor).
+[![Python](https://img.shields.io/badge/Python-3.10+-blue.svg)](https://www.python.org/)
+[![FastF1](https://img.shields.io/badge/Data-FastF1-red.svg)](https://docs.fastf1.dev/)
+[![Status](https://img.shields.io/badge/Status-Ongoing-green.svg)]()
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-- Each driver earns **points** based on their finishing position in a race.
-- Drivers compete for the **World Drivers’ Championship (WDC)**.
-- A driver is always associated with **one constructor at a time**.
-
-**Example:**  
-Max Verstappen (Driver) → Drives for Oracle Red Bull Racing (Constructor)
+</div>
 
 ---
 
-## What is a Constructor?
+## 📌 What is KYC?
 
-A **Constructor** is the **team** that designs, builds, and runs the car.
+**KYC (KnowYourChamps)** is a Python-based analytics project that predicts:
 
-- Each constructor fields **two drivers** per race.
-- Constructors compete for the **World Constructors’ Championship (WCC)**.
-- The constructor’s points are the **sum of points scored by both drivers**.
+- 🏆 **World Drivers' Championship (WDC)**
+- 🏎️ **World Constructors' Championship (WCC)**
 
-**Example:**  
-Mercedes = Kimi + Russell → Points from both drivers add to Mercedes’ WCC score.
+using:
 
----
+- ✅ Real Formula 1 data
+- ✅ Monte Carlo simulations
+- ✅ Official FIA point systems
+- ✅ Season-aware rules
+- ✅ (Optional) live race updates
 
-## What is SeasonState?
-
-**SeasonState** represents the **current snapshot of an F1 season** at any point in time.
-
-It typically contains:
-- Current **race number**
-- Driver standings (WDC points)
-- Constructor standings (WCC points)
-- Completed races
-- Remaining races
-- Any special flags (sprint races, DNFs, penalties, etc.)
-
-Think of it as:
-> “The entire season’s brain at this moment.”
-
-In simulations or predictor models, **SeasonState is updated after every race**.
+**The goal is to model how championships evolve, not just display standings.**
 
 ---
 
-## How Point Allocation Works?
+## 🏎️ Formula 1 — Explained Simply
 
-Drivers earn points based on their **finishing position**.
+> 📖 **New to F1?** Check out our detailed guide: [**How F1 Scores**](howf1scores.md)
 
-### Standard F1 Points System:
-| Position | Points |
-|--------|--------|
-| 1st | 25 |
-| 2nd | 18 |
-| 3rd | 15 |
-| 4th | 12 |
-| 5th | 10 |
-| 6th | 8 |
-| 7th | 6 |
-| 8th | 4 |
-| 9th | 2 |
-| 10th | 1 |
+### 🧍 Driver
+A driver competes in races and earns points based on finishing position. Drivers compete for the **World Drivers' Championship (WDC)**.
 
-### Bonus:
-- there is different poitning system for sprint races
-- 
-### Sprint F1 Points System:
-| Position | Points |
-|--------|--------|
-| 1st | 8 |
-| 2nd | 7 |
-| 3rd | 6 |
-| 4th | 5 |
-| 5th | 4 |
-| 6th | 3 |
-| 7th | 2 |
-| 8th | 1 |
+👉 *Example: Max Verstappen*
 
+### 🏎️ Constructor
+A constructor (team) fields two drivers.
+- Team points = sum of both drivers' points
+- Competes for **World Constructors' Championship (WCC)**
 
-Only the **top 10 finishers score points and top 8 sprint finshers**.
+👉 *Example: Red Bull Racing*
+
+### 🏁 Race Weekend Types
+
+| Type | Description |
+|------|-------------|
+| **Race** | Main event (25–1 points) |
+| **Sprint** | Short race (8–1 points) |
+| **Fastest Lap** | +1 point (removed from 2025) |
+
+### 🧠 Championship Logic
+
+- ✔ One race affects both WDC and WCC
+- ✔ Sprint and Race handled separately
+- ✔ Rules vary by season
+- ✔ Simulation respects FIA scoring system
 
 ---
 
-## How Does One Race Update Both WDC and WCC?
+## 🔥 What KYC Does
 
-A single race affects **both championships simultaneously**.
+### ✅ Current Features
 
-### Step-by-step flow:
-1. Race finishes → Drivers get classified
-2. Each driver earns points → **Added to WDC**
-3. Driver points are also added to their constructor → **Added to WCC**
-4. SeasonState updates standings
+- Build season state from real F1 data
+- Simulate remaining races using Monte Carlo
+- **Predict:**
+  - WDC winner probability
+  - WCC winner probability
+- **Supports:**
+  - Sprint weekends
+  - Rule changes by season
+  - Future-proof architecture
 
-### Example:
-- Driver A (Team X) finishes **P2** → earns **18 points**
-- Driver B (Team X) finishes **P5** → earns **10 points**
+### 🧪 Simulation Engine
 
-**Result:**
-- Driver A → +18 WDC points
-- Driver B → +10 WDC points
-- Team X → +28 WCC points
-
-One race. Two championships. Zero mercy. 🏎️🏁
-
----
-
-## TL;DR
-
-- **Driver** → Individual racer → fights for WDC  
-- **Constructor** → Team → fights for WCC  
-- **SeasonState** → Current season snapshot  
-- **Points** → Based on finishing position  
-- **One race updates both championships automatically**
+- Weighted randomness (based on current form)
+- Thousands of season simulations
+- Probabilistic outcome modeling
+- No hardcoded results
 
 ---
 
+## 🧰 Tech Stack
 
+### 🧠 Core
+- Python 3.10+
+- Dataclasses
+- OOP-based domain modeling
+
+### 📊 Data Source
+- [**FastF1**](https://docs.fastf1.dev/) → Official Formula 1 timing & standings
+
+### 🧮 Computation
+- NumPy
+- Monte Carlo Simulation
+- Probabilistic ranking
+
+### 🧱 Architecture
+- Modular design
+- Clean separation of concerns
+- No tight coupling
+- Simulation-ready
+
+---
+
+## 📁 Project Structure
+
+```
+F1KYC/
+│
+├── src/
+│   ├── models.py          # Core domain models
+│   ├── simulation.py      # Monte Carlo engine
+│   ├── data_fetching.py   # FastF1 integration
+│   └── newwww.py          # Runner / entry point
+│
+├── cache/                 # FastF1 cache
+├── howf1scores.md         # F1 scoring system explained
+├── README.md              # This file
+└── requirements.txt       # Dependencies
+```
+
+---
+
+## ⚙️ How It Works
+
+### Step 1 — Load Real Data
+
+```python
+season = build_season_state(2025)
+```
+
+### Step 2 — Run Simulations
+
+```python
+results = monte_carlo_championship(season, simulations=3000)
+```
+
+### Step 3 — Get Predictions
+
+```
+WDC:
+VER → 71.2%
+NOR → 18.4%
+LEC → 7.1%
+
+WCC:
+Red Bull → 65.9%
+McLaren → 29.3%
+```
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Python 3.10 or higher
+- pip package manager
+
+### Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/biv720/kyc.git
+   cd kyc
+   ```
+
+2. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. **Run the simulation**
+   ```bash
+   python src/newwww.py
+   ```
+
+### Example Usage
+
+```python
+from src.data_fetching import build_season_state
+from src.simulation import monte_carlo_championship
+
+# Load current season
+season = build_season_state(2025)
+
+# Run 5000 simulations
+results = monte_carlo_championship(season, simulations=5000)
+
+# View predictions
+print(results)
+```
+
+---
+
+## 🧠 Design Philosophy
+
+| Principle | Description |
+|-----------|-------------|
+| ✔ **Domain-first modeling** | Models reflect real F1 structure |
+| ✔ **No hardcoded logic** | Rules driven by season data |
+| ✔ **Rules driven by season** | Adapts to FIA regulation changes |
+| ✔ **Extendable for live data** | Ready for real-time integration |
+| ✔ **Clean separation** | Data & logic are independent |
+
+This project was built to scale into:
+- 📡 Live race analysis
+- 🎯 Strategy simulations
+- 📊 Data visualization dashboards
+- 🕰️ Historical season replay
+
+---
+
+## 🚀 Future Roadmap
+
+### 🔜 Coming Next
+
+- [ ] 🟢 **Live Race Mode** (real-time WDC/WCC updates)
+- [ ] 📊 **Streamlit Dashboard** (interactive visualization)
+- [ ] 🧪 **Unit test suite** (comprehensive testing)
+- [ ] 🌍 **Multi-season comparison** (historical analysis)
+- [ ] 🧠 **ML-based driver performance weighting** (intelligent predictions)
+- [ ] 📈 **Strategy optimizer** (pit stop & tire strategy)
+- [ ] 🎮 **"What-if" scenario simulator** (alternative outcomes)
+- [ ] 🌐 **Web API** (REST endpoints for predictions)
+
+---
+
+## 📸 Screenshots
+
+*Coming soon: Dashboard previews, simulation outputs, and prediction visualizations*
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Whether it's bug fixes, new features, or documentation improvements.
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+---
+
+## ⚠️ Disclaimer
+
+This project is for **educational and analytical purposes only**. 
+
+Formula 1 is unpredictable — weather, strategy, penalties, and chaos always apply.
+
+> *Maybe reality might be different xD* 🏎️💨
+
+The predictions are probabilistic models based on historical data and simulations, not guarantees of actual race outcomes.
+
+---
+
+## 📝 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## 👤 Author
+
+**Bivraj** — F1 Enthusiast | Data & Design
+
+[![GitHub](https://img.shields.io/badge/GitHub-biv720-black?logo=github)](https://github.com/biv720)
+[![Twitter](https://img.shields.io/badge/Twitter-@bivraj-1DA1F2?logo=twitter)](https://twitter.com/bivraj)
+
+---
+
+## 🔗 Resources
+
+- [FastF1 Documentation](https://docs.fastf1.dev/)
+- [FIA Formula 1 Regulations](https://www.fia.com/regulation/category/110)
+- [Formula 1 Official Site](https://www.formula1.com/)
+
+---
+
+<div align="center">
+
+**Built with 🏁 for F1 data nerds and championship dreamers**
+
+[⭐ Star this repo](https://github.com/biv720/kyc) | [🐛 Report Bug](https://github.com/biv720/kyc/issues) | [✨ Request Feature](https://github.com/biv720/kyc/issues)
+
+</div>
