@@ -1,5 +1,4 @@
 # F1KYC_KnowYourChamp
-![RumorRadar Banner](https://media.discordapp.net/attachments/758945965939359745/1455437785862504540/image.png?ex=6954b990&is=69536810&hm=2452367da3fcf2f2da495ec708b6e07051a7a725385dbe4cccfd808ecd80509f&=&format=webp&quality=lossless&width=1451&height=367)
 
 ## Formula 1 Core Concepts Simplified 🏎️
 
