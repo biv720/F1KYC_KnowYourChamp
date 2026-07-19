@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![f1KYC Banner](https://media.discordapp.net/attachments/758945965939359745/1455437785862504540/image.png?ex=6954b990&is=69536810&hm=2452367da3fcf2f2da495ec708b6e07051a7a725385dbe4cccfd808ecd80509f&=&format=webp&quality=lossless&width=1451&height=367)
+![f1KYC Banner](https://cdn.discordapp.com/attachments/758945965939359745/1455437785862504540/image.png?ex=6a5db710&is=6a5c6590&hm=f72923e9396b13a4081d1740c88f7a1e91ca0263fe88faad514331c6b55e57bc)
 
 **A Formula 1 championship prediction and simulation engine powered by real-world data.**
 
